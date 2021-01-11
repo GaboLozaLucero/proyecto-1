@@ -20,7 +20,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Cougarin"
+  "brandName": "Cougarin"
 }
 
 ###
@@ -30,8 +30,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "brandId": 10,
-  "name": "cougar"
+  "brandId": 12,
+  "brandName": "Cougar"
 
 }
 
