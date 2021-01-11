@@ -5,7 +5,7 @@ import java.util.Date;
 public class Company {
 
     private Integer companyId;
-    private String name;
+    private String companyName;
     private String direction;
     private String phone;
     private String email;
@@ -31,12 +31,12 @@ public class Company {
         this.companyId = companyId;
     }
 
-    public String getName() {
-        return name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getDirection() {
@@ -99,7 +99,7 @@ public class Company {
     public String toString() {
         return "Company{" +
                 "companyId=" + companyId +
-                ", name='" + name + '\'' +
+                ", name='" + companyName + '\'' +
                 ", direction='" + direction + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +

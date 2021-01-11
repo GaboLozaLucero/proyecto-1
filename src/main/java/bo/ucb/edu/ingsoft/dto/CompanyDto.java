@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class CompanyDto {
     private Integer companyId;
-    private String name;
+    private String companyName;
     private String direction;
     private String phone;
     private String email;
@@ -21,12 +21,12 @@ public class CompanyDto {
         this.companyId = companyId;
     }
 
-    public String getName() {
-        return name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getDirection() {
@@ -58,7 +58,7 @@ public class CompanyDto {
     public String toString() {
         return "Company{" +
                 "companyId=" + companyId +
-                ", name='" + name + '\'' +
+                ", companyName='" + companyName + '\'' +
                 ", direction='" + direction + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +

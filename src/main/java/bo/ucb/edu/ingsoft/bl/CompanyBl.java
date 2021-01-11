@@ -34,7 +34,7 @@ public class CompanyBl {
             CompanyDto companyDto = new CompanyDto();
 
             companyDto.setCompanyId(company.getCompanyId());
-            companyDto.setName(company.getName());
+            companyDto.setCompanyName(company.getCompanyName());
             companyDto.setDirection(company.getDirection());
             companyDto.setPhone(company.getPhone());
             companyDto.setEmail(company.getEmail());
@@ -48,7 +48,7 @@ public class CompanyBl {
         Company company =  companyDao.findByCompanyId(companyId);
         CompanyDto companyDto = new CompanyDto();
         companyDto.setCompanyId(company.getCompanyId());
-        companyDto.setName(company.getName());
+        companyDto.setCompanyName(company.getCompanyName());
         companyDto.setDirection(company.getDirection());
         companyDto.setPhone(company.getPhone());
         companyDto.setEmail(company.getEmail());
@@ -57,7 +57,7 @@ public class CompanyBl {
 
     public CompanyDto createCompany(CompanyDto companyDto, Transaction transaction) {
         Company company = new Company();
-        company.setName(companyDto.getName());
+        company.setCompanyName(companyDto.getCompanyName());
         company.setDirection(companyDto.getDirection());
         company.setPhone(companyDto.getPhone());
         company.setEmail(companyDto.getEmail());
@@ -88,7 +88,7 @@ public class CompanyBl {
     public CompanyDto updateCompany(CompanyDto companyDto, Transaction transaction){
         Company company = new Company();
         company.setCompanyId(companyDto.getCompanyId());
-        company.setName(companyDto.getName());
+        company.setCompanyName(companyDto.getCompanyName());
         company.setDirection(companyDto.getDirection());
         company.setPhone(companyDto.getPhone());
         company.setEmail(companyDto.getEmail());

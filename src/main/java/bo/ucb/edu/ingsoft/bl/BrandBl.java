@@ -24,7 +24,7 @@ public class BrandBl {
 
     public BrandDto createBrand(BrandDto brandDto, Transaction transaction){
         Brand brand=new Brand();
-        brand.setName(brandDto.getName());
+        brand.setBrandName(brandDto.getBrandName());
         brand.setTxId(transaction.getTxId());
         brand.setTxUserId(transaction.getTxUserId());
         brand.setTxHost(transaction.getTxHost());
@@ -40,7 +40,7 @@ public class BrandBl {
         BrandDto brandDto= new BrandDto();
         Brand brandResponse= brandDao.findByBrandId(brandId);
         brandDto.setBrandId(brandResponse.getBrandId());
-        brandDto.setName(brandResponse.getName());
+        brandDto.setBrandName(brandResponse.getBrandName());
         return brandDto;
     }
 
@@ -52,7 +52,7 @@ public class BrandBl {
             BrandDto brandDto = new BrandDto();
 
             brandDto.setBrandId(brand.getBrandId());
-            brandDto.setName(brand.getName());
+            brandDto.setBrandName(brand.getBrandName());
 
             brandsDto.add(i, brandDto);
         }
@@ -62,7 +62,7 @@ public class BrandBl {
     public BrandDto updateBrand(BrandDto brandDto, Transaction transaction){
         Brand brand = new Brand();
         brand.setBrandId(brandDto.getBrandId());
-        brand.setName(brandDto.getName());
+        brand.setBrandName(brandDto.getBrandName());
         brand.setTxId(transaction.getTxId());
         brand.setTxUserId(transaction.getTxUserId());
         brand.setTxHost(transaction.getTxHost());

@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Brand extends BrandDto {
     private Integer brandId;
-    private String name;
+    private String brandName;
     private Transaction transaction;
     private Integer status;
 
@@ -23,12 +23,12 @@ public class Brand extends BrandDto {
         this.brandId = brandId;
     }
 
-    public String getName() {
-        return name;
+    public String getBrandName() {
+        return brandName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
     }
 
     public Integer getTxId() {
@@ -77,7 +77,7 @@ public class Brand extends BrandDto {
     public String toString() {
         return "Brand{" +
                 "brandId=" + brandId +
-                ", name='" + name + '\'' +
+                ", name='" + brandName + '\'' +
                 ", txId=" + transaction.getTxId() +
                 ", txHost='" + transaction.getTxHost() + '\'' +
                 ", txUserId=" + transaction.getTxUserId() +
