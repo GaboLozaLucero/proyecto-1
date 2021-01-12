@@ -23,7 +23,7 @@
             product_id = #{productId}
     </select>
     <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.Product">
-        INSERT INTO product VALUES (null, #{productTypeId}, #{brandId}, #{companyId}, #{cityId}, #{productName}, #{model}, #{productDescription}, #{stock}, #{weight}, #{img}, #{PricePerUnit}, #{currency}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate} )
+        INSERT INTO product VALUES (null, #{productTypeId}, #{brandId}, #{companyId}, #{cityId}, #{productName}, #{model}, #{productDescription}, #{stock}, #{weight}, #{img}, #{pricePerUnit}, #{currency}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate} )
     </insert>
     <select id="getProducts" resultType="bo.ucb.edu.ingsoft.model.Product">
         SELECT
