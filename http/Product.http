@@ -14,18 +14,18 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "productName": "Procesador",
+  "productTypeId": 2,
+  "brandId": 1,
+  "companyId": 4,
+  "cityId": 1,
+  "productName": "Processor",
   "model": "I5 9400",
-  "productDescription": "Intel I5 novena generacion",
+  "productDescription": "Intel I5 novena generation",
   "stock": 5,
   "weight": 5.5,
-  "companyId": 2,
-  "productTypeId": 1,
-  "cityId": 1,
-  "unitPrice": 1000,
-  "currency": 1,
-  "brandId": 1,
-  "img": "blablala"
+  "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpcel.com%2FIntel-BX80684I59400-Procesador-Intel-Core-i5-9400-de-Novena-Generacion-2-9-GHz-hasta-4-1-GHz-con-Intel-HD-Graphics-630-Socket-1151-Cache-9-MB-Six-Core-14nm-306512&psig=AOvVaw0_6koJRM74LTgjtPWBIzzS&ust=1610490896962000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDvxKT4lO4CFQAAAAAdAAAAABAc",
+  "pricePerUnit": 1000,
+  "currency": 1
 }
 ###########
 
@@ -37,7 +37,7 @@ Content-Type: application/json
   "productId": 15,
   "productName": "Pro Ultimate",
   "model": "I5 900",
-  "productDescription": "Intel I7 novena generacion",
+  "productDescription": "Intel I7 novena generation",
   "stock": 10,
   "weight": 5.1,
   "companyId": 1,

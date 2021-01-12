@@ -2,15 +2,12 @@ package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.ProductDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
-import bo.ucb.edu.ingsoft.dto.CompanyDto;
 import bo.ucb.edu.ingsoft.dto.ProductDto;
-import bo.ucb.edu.ingsoft.model.Company;
 import bo.ucb.edu.ingsoft.model.Product;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +34,7 @@ public class ProductBl {
         productDto.setCompanyId(product.getCompanyId());
         productDto.setProductTypeId(product.getProductTypeId());
         productDto.setCityId(product.getCityId());
-        productDto.setUnitPrice(product.getUnitPrice());
+        productDto.setPricePerUnit(product.getPricePerUnit());
         productDto.setCurrency(product.getCurrency());
         productDto.setBrandId(product.getBrandId());
         productDto.setImg(product.getImg());
@@ -58,7 +55,7 @@ public class ProductBl {
             productDto.setCompanyId(product.getCompanyId());
             productDto.setProductTypeId(product.getProductTypeId());
             productDto.setCityId(product.getCityId());
-            productDto.setUnitPrice(product.getUnitPrice());
+            productDto.setPricePerUnit(product.getPricePerUnit());
             productDto.setCurrency(product.getCurrency());
             productDto.setBrandId(product.getBrandId());
             productDto.setImg(product.getImg());
@@ -76,7 +73,7 @@ public class ProductBl {
         product.setCompanyId(productDto.getCompanyId());
         product.setProductTypeId(productDto.getProductTypeId());
         product.setCityId(productDto.getCityId());
-        product.setUnitPrice(productDto.getUnitPrice());
+        product.setPricePerUnit(productDto.getPricePerUnit());
         product.setCurrency(productDto.getCurrency());
         product.setBrandId(productDto.getBrandId());
         product.setImg(productDto.getImg());
@@ -103,7 +100,7 @@ public class ProductBl {
         //product.setCompanyId(productDto.getCompanyId());
         //product.setProductTypeId(productDto.getProductTypeId());
         //product.setCityId(productDto.getCityId());
-        product.setUnitPrice(productDto.getUnitPrice());
+        product.setPricePerUnit(productDto.getPricePerUnit());
         //product.setCurrency(productDto.getCurrency())product.setBrandId(productDto.getBrandId());
         product.setImg(productDto.getImg());
 

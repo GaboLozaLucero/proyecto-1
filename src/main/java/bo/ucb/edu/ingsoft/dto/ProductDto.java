@@ -6,51 +6,18 @@ import java.util.Date;
 
 public class ProductDto {
     private Integer productId;
+    private Integer productTypeId;
+    private Integer brandId;
+    private Integer companyId;
+    private Integer cityId;
     private String productName;
     private String model;
     private String productDescription;
     private Integer stock;
     private Double weight;
-    private Integer companyId;
-    private Integer productTypeId;
-    private Integer cityId;
-    private Double unitPrice;
-    private Integer currency;
-    private Integer brandId;
-
-    public java.lang.String getImg() {
-        return img;
-    }
-
-    public void setImg(java.lang.String img) {
-        this.img = img;
-    }
-
     private String img;
-    public Integer getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Integer currency) {
-        this.currency = currency;
-    }
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", model='" + model + '\'' +
-                ", productDescription='" + productDescription + '\'' +
-                ", stock=" + stock +
-                ", weight=" + weight +
-                ", CompanyId=" + companyId +
-                ", productTypeId=" + productTypeId +
-                ", cityId=" + cityId +
-                ", unitPrice=" + unitPrice +
-                ", currency=" + currency +
-                ", brandId=" + brandId +
-                '}';
-    }
+    private Double pricePerUnit;
+    private Integer currency;
 
     public Integer getProductId() {
         return productId;
@@ -58,6 +25,38 @@ public class ProductDto {
 
     public void setProductId(Integer productId) {
         this.productId = productId;
+    }
+
+    public Integer getProductTypeId() {
+        return productTypeId;
+    }
+
+    public void setProductTypeId(Integer productTypeId) {
+        this.productTypeId = productTypeId;
+    }
+
+    public Integer getBrandId() {
+        return brandId;
+    }
+
+    public void setBrandId(Integer brandId) {
+        this.brandId = brandId;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+
+    public Integer getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
     }
 
     public String getProductName() {
@@ -100,43 +99,27 @@ public class ProductDto {
         this.weight = weight;
     }
 
-    public Integer getCompanyId() {
-        return companyId;
+    public String getImg() {
+        return img;
     }
 
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
+    public void setImg(String img) {
+        this.img = img;
     }
 
-    public Integer getProductTypeId() {
-        return productTypeId;
+    public Double getPricePerUnit() {
+        return pricePerUnit;
     }
 
-    public void setProductTypeId(Integer productTypeId) {
-        this.productTypeId = productTypeId;
+    public void setPricePerUnit(Double pricePerUnit) {
+        this.pricePerUnit = pricePerUnit;
     }
 
-    public Integer getCityId() {
-        return cityId;
+    public Integer getCurrency() {
+        return currency;
     }
 
-    public void setCityId(Integer cityId) {
-        this.cityId = cityId;
-    }
-
-    public Double getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(Double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    public Integer getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(Integer brandId) {
-        this.brandId = brandId;
+    public void setCurrency(Integer currency) {
+        this.currency = currency;
     }
 }
