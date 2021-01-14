@@ -36,7 +36,7 @@
             company_id as companyId,
             product_type_id as productTypeId,
             city_id as cityId,
-            price_per_unit as unitPrice,
+            price_per_unit as pricePerUnit,
             currency as currency,
             brand_id as brandId,
             img as img
