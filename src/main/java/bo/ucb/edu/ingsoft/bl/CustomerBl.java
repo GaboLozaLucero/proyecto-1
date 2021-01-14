@@ -30,7 +30,6 @@ public class CustomerBl {
         User user = userDao.findByUserId(userId);
         UserDto userDto = new UserDto();
         userDto.setUserId(user.getUserId());
-        userDto.setPersonId(user.getPersonId());
         userDto.setCompanyId(user.getCompanyId());
         userDto.setUsername(user.getUsername());
         userDto.setPassword(user.getPassword());
@@ -61,29 +60,6 @@ public class CustomerBl {
         user.setUsername(userDto.getUsername());
         user.setPassword(userDto.getPassword());
         userDao.create(user);
-
-        /*person.setTxId(transaction.getTxId());
-        person.setTxHost(transaction.getTxHost());
-        person.setTxUserId(transaction.getTxUserId());
-        person.setTxDate(transaction.getTxDate());
-        person.setCityId(userDto.getCityId());
-        person.setFirstName(userDto.getFirstName());
-        person.setLastName(userDto.getLastName());
-        person.setPhone(userDto.getPhone());
-        person.setBirthday(userDto.getBirthday());
-        person.setEmail(userDto.getEmail());
-        person.setPersonId(userDto.getUserId());
-        personDao.create(person);
-
-        userDto.setTxId(transaction.getTxId());
-        userDto.setTxUserId(transaction.getTxUserId());
-        userDto.setTxHost(transaction.getTxHost());
-        userDto.setTxDate(transaction.getTxDate());
-        userDao.create(userDto);
-        Integer getLastUserId = transactionDao.getLastInsertId();
-        userDto.setUserId(getLastUserId);*/
-
-
 
         return userDto;
     }

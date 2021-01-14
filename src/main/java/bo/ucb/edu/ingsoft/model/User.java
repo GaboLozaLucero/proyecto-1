@@ -4,34 +4,20 @@ import java.util.Date;
 
 public class User {
     private Integer userId;
-    private Integer personId;
+    private Integer cityId;
     private Integer companyId;
+    private String name;
+    private String lastname;
+    private String phone;
+    private String birthday;
+    private String email;
     private String username;
     private String password;
-    private String salt;
-    private Integer token;
-    private Transaction transaction;
     private Integer status;
+    private Transaction transaction;
 
-    public User(Integer userId, Integer personId, Integer companyId, Integer statusId, String username, String password, String salt, Integer token, Integer txId, String txHost, Integer txUserId, Date txDate) {
-        this.userId = userId;
-        this.personId = personId;
-        this.companyId = companyId;
-        this.username = username;
-        this.password = password;
-        this.salt = salt;
-        this.token = token;
-        this.status = status;
-        this.transaction =new Transaction(txId,txHost,txUserId,txDate);
-
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    public User(){
+        this.transaction= new Transaction();
     }
 
     public Integer getUserId() {
@@ -42,12 +28,12 @@ public class User {
         this.userId = userId;
     }
 
-    public Integer getPersonId() {
-        return personId;
+    public Integer getCityId() {
+        return cityId;
     }
 
-    public void setPersonId(Integer personId) {
-        this.personId = personId;
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
     }
 
     public Integer getCompanyId() {
@@ -56,6 +42,46 @@ public class User {
 
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -74,20 +100,12 @@ public class User {
         this.password = password;
     }
 
-    public String getSalt() {
-        return salt;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
-    public Integer getToken() {
-        return token;
-    }
-
-    public void setToken(Integer token) {
-        this.token = token;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Integer getTxId() {
@@ -120,22 +138,5 @@ public class User {
 
     public void setTxDate(Date txDate) {
         this.transaction.setTxDate(txDate);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", personId=" + personId +
-                ", companyId=" + companyId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                ", token=" + token +
-                ", txId=" + transaction.getTxId() +
-                ", txHost='" + transaction.getTxHost() + '\'' +
-                ", txUserId=" + transaction.getTxUserId() +
-                ", txDate=" + transaction.getTxDate() +
-                '}';
     }
 }

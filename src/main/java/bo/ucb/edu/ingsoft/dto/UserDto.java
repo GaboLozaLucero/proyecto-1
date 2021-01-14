@@ -6,37 +6,28 @@ import java.util.Date;
 
 public class UserDto {
     /*{
-       "firstName": "Juanito",
-       "lastName": "Prueba",
+       "cityId": "4",
+       "companyId": "2",
+       "name": "Juan",
+       "lastname": "Prueba"
+       "phone": "77747774",
+       "birthday: "1997-08-15"
+       "email": "jprueba@gmail.com"
        "username": "juanprueba",
        "password": "prueba",
-       "companyId": 1,
-       "city": 1,
-       "phone": "77747774",
-       "email": "jprueba@gmail.com"
-       "birthday: "1997-08-15"
     }*/
 
     private Integer userId;
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String password;
-    private Integer companyId;
     private Integer cityId;
+    private Integer companyId;
+    private String name;
+    private String lastname;
     private String phone;
     private Date birthday;
     private String email;
-    private Integer personId;
+    private String username;
+    private String password;
     private Transaction transaction;
-
-    public Integer getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(Integer personId) {
-        this.personId = personId;
-    }
 
     public Integer getUserId() {
         return userId;
@@ -46,36 +37,12 @@ public class UserDto {
         this.userId = userId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Integer getCityId() {
+        return cityId;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
     }
 
     public Integer getCompanyId() {
@@ -86,12 +53,20 @@ public class UserDto {
         this.companyId = companyId;
     }
 
-    public Integer getCityId() {
-        return cityId;
+    public String getName() {
+        return name;
     }
 
-    public void setCityId(Integer cityId) {
-        this.cityId = cityId;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getPhone() {
@@ -116,6 +91,22 @@ public class UserDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Transaction getTransaction() {
@@ -164,17 +155,17 @@ public class UserDto {
 
     @Override
     public String toString() {
-        return "UserCreate{" +
+        return "UserDto{" +
                 "userId=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", companyId=" + companyId +
                 ", cityId=" + cityId +
+                ", companyId=" + companyId +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
                 ", phone='" + phone + '\'' +
                 ", birthday=" + birthday +
                 ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", transaction=" + transaction +
                 '}';
     }
