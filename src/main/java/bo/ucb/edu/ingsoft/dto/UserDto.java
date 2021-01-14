@@ -14,7 +14,7 @@ public class UserDto {
        "birthday: "1997-08-15"
        "email": "jprueba@gmail.com"
        "username": "juanprueba",
-       "password": "prueba",
+       "password": "prueba"
     }*/
 
     private Integer userId;

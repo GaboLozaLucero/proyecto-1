@@ -8,15 +8,15 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "firstName": "Prueba2",
-  "lastName": "Prueba2",
-  "username": "prueba2",
-  "password": "prueba2",
-  "companyId": 3,
-  "cityId": 4,
-  "phone": "77778899",
-  "email": "prueba2@gmail.com",
-  "birthday": "1990-10-10"
+  "cityId": "4",
+  "companyId": "2",
+  "name": "Juan",
+  "lastname": "Prueba",
+  "phone": "77747774",
+  "birthday": "1997-08-15",
+  "email": "jprueba@gmail.com",
+  "username": "juanprueba",
+  "password": "prueba"
 }
 
 ###

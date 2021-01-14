@@ -6,7 +6,6 @@
     <select id="findByUserId" parameterType="int" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT
             user_id as userId,
-            person_id as personId,
             company_id as companyId,
             username as username,
             password as password
@@ -15,9 +14,9 @@
             user_id = #{userId}
     </select>
     <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.User">
-        INSERT INTO user (`person_id`, `company_id`, `username`, `password`, `tx_id`, `tx_host`, `tx_user_id`, `tx_date`)
+        INSERT INTO user (`city_id`, `company_id`, `name`, `lastname`, `phone`, `birthday`, `email`, `username`, `password`, `tx_id`, `tx_host`, `tx_user_id`, `tx_date`)
         VALUES (
-            #{personId}, #{companyId}, #{username}, #{password},#{txId}, #{txHost}, #{txUserId}, #{txDate}
+            #{cityId}, #{companyId}, #{name}, #{lastname}, #{phone}, #{birthday}, #{email}, #{username}, #{password},#{txId}, #{txHost}, #{txUserId}, #{txDate}
         )
     </insert>
     <select id="getLastInsertId" resultType="java.lang.Integer">

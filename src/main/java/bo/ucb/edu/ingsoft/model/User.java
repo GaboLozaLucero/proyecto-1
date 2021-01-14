@@ -9,7 +9,7 @@ public class User {
     private String name;
     private String lastname;
     private String phone;
-    private String birthday;
+    private Date birthday;
     private String email;
     private String username;
     private String password;
@@ -68,11 +68,11 @@ public class User {
         this.phone = phone;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 

@@ -1,10 +1,8 @@
 package bo.ucb.edu.ingsoft.bl;
 
-import bo.ucb.edu.ingsoft.dao.PersonDao;
 import bo.ucb.edu.ingsoft.dao.UserDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.UserDto;
-import bo.ucb.edu.ingsoft.model.Person;
 import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +14,11 @@ import java.util.List;
 @Service
 public class CustomerBl {
     private UserDao userDao;
-    private PersonDao personDao;
     private TransactionDao transactionDao;
 
     @Autowired
-    public CustomerBl(UserDao userDao, PersonDao personDao, TransactionDao transactionDao) {
+    public CustomerBl(UserDao userDao, TransactionDao transactionDao) {
         this.userDao = userDao;
-        this.personDao = personDao;
         this.transactionDao = transactionDao;
     }
 
@@ -36,27 +32,18 @@ public class CustomerBl {
         return userDto;
     }
 
-    public UserDto createUser(UserDto userDto, Transaction transaction, Person person, User user) {
-        person.setTxId(transaction.getTxId());
-        person.setTxHost(transaction.getTxHost());
-        person.setTxUserId(transaction.getTxUserId());
-        person.setTxDate(transaction.getTxDate());
-        person.setCityId(userDto.getCityId());
-        person.setFirstName(userDto.getFirstName());
-        person.setLastName(userDto.getLastName());
-        person.setPhone(userDto.getPhone());
-        person.setBirthday(userDto.getBirthday());
-        person.setEmail(userDto.getEmail());
-        personDao.create(person);
-        Integer getLastPersonId = transactionDao.getLastInsertId();
-        userDto.setPersonId(getLastPersonId);
-
+    public UserDto createUser(UserDto userDto, Transaction transaction, User user) {
         user.setTxId(transaction.getTxId());
         user.setTxHost(transaction.getTxHost());
         user.setTxUserId(transaction.getTxUserId());
         user.setTxDate(transaction.getTxDate());
-        user.setPersonId(userDto.getPersonId());
+        user.setCityId(userDto.getCityId());
         user.setCompanyId(userDto.getCompanyId());
+        user.setName(userDto.getName());
+        user.setLastname(userDto.getLastname());
+        user.setPhone(userDto.getPhone());
+        user.setBirthday(userDto.getBirthday());
+        user.setEmail(userDto.getEmail());
         user.setUsername(userDto.getUsername());
         user.setPassword(userDto.getPassword());
         userDao.create(user);
@@ -73,7 +60,6 @@ public class CustomerBl {
             UserDto userDto = new UserDto();
 
             userDto.setUserId(user.getUserId());
-            userDto.setPersonId(user.getPersonId());
             userDto.setCompanyId(user.getCompanyId());
             userDto.setUsername(user.getUsername());
 

@@ -2,10 +2,7 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.CustomerBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
-import bo.ucb.edu.ingsoft.dto.CompanyDto;
-import bo.ucb.edu.ingsoft.dto.ProductDto;
 import bo.ucb.edu.ingsoft.dto.UserDto;
-import bo.ucb.edu.ingsoft.model.Person;
 import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -41,10 +38,10 @@ public class UserApi {
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public UserDto createUser(@RequestBody UserDto UserDto, Person person, User user, HttpServletRequest request) {
+    public UserDto createUser(@RequestBody UserDto UserDto, User user, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        UserDto userDtoResponse = customerBl.createUser(UserDto, transaction, person, user);
+        UserDto userDtoResponse = customerBl.createUser(UserDto, transaction, user);
         return userDtoResponse;
     }
 
