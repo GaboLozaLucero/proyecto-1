@@ -5,11 +5,11 @@
 <mapper namespace="bo.ucb.edu.ingsoft.dao.UserDao">
     <select id="findByUserId" parameterType="int" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT
-            user_id as userId,
-            company_id as companyId,
-            username as username,
-            password as password
-        FROM user
+            a.user_id as userId,
+            a.company_id as companyId,
+            a.username as username,
+            a.password as password
+        FROM user a
         WHERE
             user_id = #{userId}
     </select>
