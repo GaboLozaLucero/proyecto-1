@@ -1,9 +1,18 @@
 package bo.ucb.edu.ingsoft.dto;
 
 import bo.ucb.edu.ingsoft.model.Transaction;
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import java.util.Date;
 
+@Service
 public class UserDto {
     /*{
        "cityId": "4",
@@ -18,16 +27,25 @@ public class UserDto {
     }*/
 
     private Integer userId;
+    @NotNull(message = "Empty field")
     private Integer cityId;
+    @NotNull(message = "Empty field")
     private Integer companyId;
+
+    @NotBlank(message = "Empty field")
     private String name;
+    @NotBlank(message = "Empty field")
     private String lastname;
+    @NotBlank(message = "Empty field")
     private String phone;
+    @PastOrPresent(message = "Invalid date")
     private Date birthday;
+    @NotBlank(message = "Empty field")
     private String email;
+    @NotBlank(message = "Empty field")
     private String username;
+    @NotBlank(message = "Empty field")
     private String password;
-    private Transaction transaction;
 
     public Integer getUserId() {
         return userId;
@@ -109,50 +127,6 @@ public class UserDto {
         this.password = password;
     }
 
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
-
-    public UserDto(){
-        this.transaction= new Transaction();
-    }
-
-    public Integer getTxId() {
-        return this.transaction.getTxId();
-    }
-
-    public void setTxId(Integer txId) {
-        this.transaction.setTxId(txId);
-    }
-
-    public String getTxHost() {
-        return this.transaction.getTxHost();
-    }
-
-    public void setTxHost(String txHost) {
-        this.transaction.setTxHost(txHost);
-    }
-
-    public Integer getTxUserId() {
-        return this.transaction.getTxUserId();
-    }
-
-    public void setTxUserId(Integer txUserId) {
-        this.transaction.setTxUserId(txUserId);
-    }
-
-    public Date getTxDate() {
-        return this.transaction.getTxDate();
-    }
-
-    public void setTxDate(Date txDate) {
-        this.transaction.setTxDate(txDate);
-    }
-
     @Override
     public String toString() {
         return "UserDto{" +
@@ -166,7 +140,6 @@ public class UserDto {
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", transaction=" + transaction +
                 '}';
     }
 }

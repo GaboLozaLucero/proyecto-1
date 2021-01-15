@@ -320,7 +320,7 @@ CREATE TABLE user (
     lastname varchar(100) NOT NULL,
     phone varchar(50) NOT NULL,
     birthday date NOT NULL,
-    email varchar(64) NOT NULL,
+    email varchar(64) NOT NULL UNIQUE,
     username varchar(64) NOT NULL,
     password varchar(100) NOT NULL,
     status int NOT NULL DEFAULT 1,
