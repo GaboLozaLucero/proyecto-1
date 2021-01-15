@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
@@ -40,7 +41,7 @@ public class ProductApi {
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ProductDto createProduct(@RequestBody ProductDto productDto, HttpServletRequest request) {
+    public ProductDto createProduct(@Valid @RequestBody ProductDto productDto, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);

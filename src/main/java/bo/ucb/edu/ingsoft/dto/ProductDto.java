@@ -2,21 +2,48 @@ package bo.ucb.edu.ingsoft.dto;
 
 import bo.ucb.edu.ingsoft.model.Transaction;
 
+import javax.validation.constraints.*;
 import java.util.Date;
 
 public class ProductDto {
     private Integer productId;
+    @NotNull(message = "Empty Field")
+    @Min(value = 1)
+    @Max(value = 11)
     private Integer productTypeId;
+    @NotNull(message = "Empty Field")
+    @Min(value = 1)
+    @Max(value = 11)
     private Integer brandId;
+    @NotNull(message = "Empty Field")
+    @Min(value = 1)
+    @Max(value = 5)
     private Integer companyId;
+    @NotNull(message = "Empty field")
+    @Min(value = 1)
+    @Max(value = 5)
     private Integer cityId;
+
+    @NotBlank(message = "Empty Field")
     private String productName;
+    @NotBlank(message = "Empty Field")
     private String model;
+    @NotBlank(message = "Empty Field")
     private String productDescription;
+    @NotNull(message = "Empty Field")
+    @Positive(message = "Invalid stock")
     private Integer stock;
+    @NotNull(message = "Empty Field")
+    @Positive(message = "Invalid weight")
     private Double weight;
+    @NotBlank(message = "Empty Field")
     private String img;
+    @NotNull(message = "Empty Field")
+    @Positive(message = "Invalid price")
     private Double pricePerUnit;
+    @NotNull(message = "Empty Field")
+    @Min(value = 1)
+    @Max(value = 2)
     private Integer currency;
 
     public Integer getProductId() {

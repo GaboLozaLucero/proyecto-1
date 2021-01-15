@@ -6,10 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 @Service
@@ -28,23 +25,31 @@ public class UserDto {
 
     private Integer userId;
     @NotNull(message = "Empty field")
+    @Min(value = 1)
+    @Max(value = 5)
     private Integer cityId;
     @NotNull(message = "Empty field")
     private Integer companyId;
 
     @NotBlank(message = "Empty field")
+    @Size(min = 3, max = 50)
     private String name;
     @NotBlank(message = "Empty field")
+    @Size(min = 3, max = 50)
     private String lastname;
     @NotBlank(message = "Empty field")
+    @Size(min = 8, max = 8)
     private String phone;
     @PastOrPresent(message = "Invalid date")
     private Date birthday;
     @NotBlank(message = "Empty field")
+    @Email(message = "No valid email")
     private String email;
     @NotBlank(message = "Empty field")
+    @Size(min = 5, max = 50)
     private String username;
     @NotBlank(message = "Empty field")
+    @Size(min = 6, max = 90)
     private String password;
 
     public Integer getUserId() {
